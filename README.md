@@ -6,6 +6,30 @@ This project simulates the random partitioning of $n$ indistinguishable objects 
 
 Each object chooses to either join an existing group or form a new group based on probabilistic rules influenced by a concentration parameter $\alpha > 0$. The process generates a distribution over all possible partitions of the set $\{1, 2, ..., n\}$.
 
+### Mathematical Foundations
+
+Let:
+- $n$ = total number of objects (customers)
+- $\alpha$ = concentration parameter
+- $k$ = number of groups (tables) formed after $n$ objects are placed
+- $C_i$ = the group assignment of object $i$
+
+At step $i$, the probability of joining an existing group $j$ of size $n_j$ is:
+
+$$P(C_i = j) = \frac{n_j}{\alpha + i - 1}$$
+
+The probability of forming a new group is:
+
+$$P(C_i = \text{new}) = \frac{\alpha}{\alpha + i - 1}$$
+
+This defines a probability distribution over partitions known as the **Ewens sampling formula**:
+
+$$P(n_1, ..., n_k) = \frac{\alpha^k}{\alpha^{(n)}} \prod_{j=1}^{k} (n_j - 1)!$$
+
+where $n_j$ is the size of the $j$-th group, $k$ is the total number of groups, and $\alpha^{(n)} = \alpha (\alpha + 1) ... (\alpha + n - 1)$ is the rising factorial.
+
+As $\alpha$ increases, the model prefers more groups. As $\alpha \to 0$, the process becomes deterministic and produces fewer partitions.
+
 ## Folder Structure
 
 ```
