@@ -54,3 +54,16 @@ python scripts/03_analyze_results.py
 python scripts/04_visualize_results.py
 ```
 
+## Requirements
+
+The project requires the following Python libraries:
+- Python >= 3.8
+- matplotlib
+- statistics (built-in)
+- json (built-in)
+- random (built-in)
+
+You can install all necessary packages with:
+```bash
+pip install -r requirements.txt
+```
