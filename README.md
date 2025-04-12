@@ -23,3 +23,34 @@ project-root/
 │   └── group_sizes_histogram.png    # Histogram of group sizes
 └── requirements.txt                 # Dependencies
 ```
+
+## Usage
+
+### 1. Setup the Project:
+Clone the repository.
+Ensure you have Python installed.
+Install required dependencies using the requirements.txt file:
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Generate a single partition (demonstration):
+```bash
+python scripts/01_generate_partitions.py
+```
+
+### 3. Run full simulation and save results:
+```bash
+python scripts/02_run_simulation.py
+```
+
+### 4. Analyze simulation results:
+```bash
+python scripts/03_analyze_results.py
+```
+
+### 5. Visualize simulation output:
+```bash
+python scripts/04_visualize_results.py
+```
+
